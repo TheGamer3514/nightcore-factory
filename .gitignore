@@ -1,0 +1,53 @@
+# --- Secrets -----------------------------------------------------------------
+# yt_token.json grants upload access to a YouTube channel; client_secret.json
+# identifies the OAuth app. Neither ever belongs in version control.
+client_secret*.json
+yt_token*.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Runtime state (per-installation, regenerated or personal) -----------------
+# The ledger is the "what have I already published" memory of one channel.
+state/*
+!state/.gitkeep
+
+# --- Generated output ----------------------------------------------------------
+work/
+out/
+*.mp4
+*.mkv
+*.wav
+*.m4a
+*.webm
+
+# --- Art library ---------------------------------------------------------------
+# Third-party artwork downloaded by `--build-pool`. Not ours to redistribute;
+# every user builds their own.
+assets/anime/*
+!assets/anime/.gitkeep
+
+# --- Python --------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# --- Editors / OS ----------------------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- AI tooling / local session notes ---------------------------------------------
+.claude/
+.remember/
+.superpowers/

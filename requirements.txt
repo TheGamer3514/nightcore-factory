@@ -1,0 +1,17 @@
+# Only needed for YouTube publishing. A --no-upload render, --build-pool and
+# the test suite all run on a bare Python install.
+google-api-python-client>=2.120
+google-auth-oauthlib>=1.2
+google-auth-httplib2>=0.2
+
+# zoneinfo has no tz database of its own on Windows, and the quota day is
+# defined in Pacific time.
+tzdata>=2024.1; sys_platform == "win32"
+
+# Art-library checks (ingest gate and --audit-pool): measuring whether an
+# image survives the frame needs the pixels, not just ffmpeg's opinion.
+Pillow>=10.0
+numpy>=1.24
+
+# Tests only.
+pytest>=8.0
